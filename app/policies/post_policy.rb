@@ -9,6 +9,11 @@ class PostPolicy < ApplicationPolicy
     true
   end
 
+  def create? 
+    # any logged in user can create
+    !user.nil?
+  end
+
   def update?
     record.user == user
   end
