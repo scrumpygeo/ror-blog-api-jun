@@ -14,7 +14,8 @@ class Api::V1::PostsController < Api::V1::BaseController
         @post.user = current_user
         authorize @post
         if @post.save 
-            render :show
+            render :show, status: :created 
+            #  status: :created specifies code 201 - not really necessary
         else
             render_error
         end
