@@ -17,4 +17,9 @@ class PostPolicy < ApplicationPolicy
   def update?
     record.user == user
   end
+
+  def destroy?
+    # same as update, ie user can destroy
+    update?
+  end
 end
