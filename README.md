@@ -1,3 +1,3 @@
 Rails api react redux blog
 
-has devise, pundit and simple_authentication_token
+has devise, pundit and simple_authentication_token (37')
