@@ -62,5 +62,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
 
-  config.hosts << 'localhost'
+  config.hosts << 'http://localhost:3000'
 end
