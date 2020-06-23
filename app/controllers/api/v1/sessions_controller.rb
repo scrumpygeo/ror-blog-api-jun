@@ -2,6 +2,7 @@ class Api::V1::SessionsController < Devise::SessionsController
   before_action :sign_in_params, only: :create
   before_action :load_user, only: :create
 
+  # protect_from_forgery with: :null_session  check wrt api
   # respond_to :json
 
   # sign in
@@ -25,7 +26,7 @@ class Api::V1::SessionsController < Devise::SessionsController
   private
 
   def sign_in_params
-    params.fetch(:user).permit([:password, :email])
+    params.require(:user).permit([:email, :password])
   end
 
 
